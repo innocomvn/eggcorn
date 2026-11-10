@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eggcorn"
+version = "0.1.0"
+description = "Find, measure and fix what your speech recognizer mishears"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+eggcorn = "eggcorn.cli:main"
+
+[tool.setuptools]
+packages = ["eggcorn"]
