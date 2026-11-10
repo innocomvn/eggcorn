@@ -1,0 +1,60 @@
+name: "Thêm từ nghe nhầm / Add a mishearing"
+description: "Đóng góp một cặp từ hay nghe nhầm vào kho Nghễnh Ngãng"
+title: "[nghễnh ngãng] "
+labels: ["lexicon"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Cảm ơn bạn! Vui lòng **không** ghi tên người thật, số điện thoại, email, tên khách hàng hay dự án nội bộ.
+        Câu ví dụ hãy tự viết, đừng chép từ trang khác.
+  - type: input
+    id: heard
+    attributes:
+      label: "Nghe thành (heard)"
+      placeholder: "i meo"
+    validations:
+      required: true
+  - type: input
+    id: meant
+    attributes:
+      label: "Đúng ra là (meant)"
+      placeholder: "email"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: "Loại (kind)"
+      options:
+        - "loanword — từ tiếng Anh/mượn bị Việt hoá"
+        - "asr — máy nghe ra một từ Việt khác"
+        - "spelling — lỗi do phát âm (s/x, tr/ch, l/n…)"
+        - "phrase — cụm từ / thành ngữ"
+        - "meaning — nhầm nghĩa"
+    validations:
+      required: true
+  - type: dropdown
+    id: region
+    attributes:
+      label: "Vùng hay gặp (region)"
+      options: ["Không rõ / mọi nơi", "Bắc", "Trung", "Nam"]
+  - type: input
+    id: example
+    attributes:
+      label: "Câu ví dụ (tự viết, chứa từ đúng)"
+      placeholder: "em gửi email xác nhận cho anh nhé"
+  - type: dropdown
+    id: who
+    attributes:
+      label: "Ai nghe nhầm?"
+      options: ["Người", "Máy nhận dạng giọng nói (ASR)", "Cả hai"]
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: "Cam kết"
+      options:
+        - label: "Không chứa thông tin cá nhân hay bí mật công ty; câu ví dụ do tôi tự viết"
+          required: true
+        - label: "Tôi đồng ý phát hành nội dung này theo CC BY 4.0"
+          required: true

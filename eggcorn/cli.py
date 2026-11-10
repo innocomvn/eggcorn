@@ -7,7 +7,7 @@ import sys
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict
 
-from . import bench, flag, learn
+from . import bench, flag, learn, lexicon
 
 
 def read(path):
@@ -99,6 +99,20 @@ def cmd_learn_export(a):
         write(a.rules_out, rules)
 
 
+def cmd_lexicon_check(a):
+    rows = lexicon.load(a.lang, a.root)
+    errs = lexicon.validate(rows)
+    for e in errs:
+        print(e)
+    print(f"{len(rows)} entries, {len(errs)} problems")
+    sys.exit(1 if errs else 0)
+
+
+def cmd_lexicon_hints(a):
+    for line in lexicon.hints(lexicon.load(a.lang, a.root), verified_only=a.verified_only):
+        print(line)
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(prog="eggcorn")
     sub = p.add_subparsers(required=True)
@@ -129,6 +143,13 @@ def main(argv=None):
     le.add_argument("--context-out"); le.add_argument("--rules-out")
     le.add_argument("--gate", help="termtest.jsonl to validate rules on"); le.add_argument("--gate-hyps")
     le.set_defaults(fn=cmd_learn_export)
+
+    x = sub.add_parser("lexicon", help="community lexicon of mishearings (data/<lang>)").add_subparsers(required=True)
+    xc = x.add_parser("check"); xc.add_argument("--lang", default="vi"); xc.add_argument("--root", default=lexicon.DATA)
+    xc.set_defaults(fn=cmd_lexicon_check)
+    xh = x.add_parser("hints", help="heard -> meant lines to paste into an LLM context")
+    xh.add_argument("--lang", default="vi"); xh.add_argument("--root", default=lexicon.DATA)
+    xh.add_argument("--verified-only", action="store_true"); xh.set_defaults(fn=cmd_lexicon_hints)
 
     a = p.parse_args(argv)
     a.fn(a)

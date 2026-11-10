@@ -87,3 +87,20 @@ def test_prompt_shows_neighbours_read_only():
     from eggcorn.llm import build_prompt
     p = build_prompt("đồng bộ cip", {"qwen": "đồng bộ crm"}, "CRM, ERP", ["anh mở phần mềm"], ["xong rồi"])
     assert "(previous) anh mở phần mềm" in p and "(next) xong rồi" in p and "hint only" in p
+
+
+def test_repo_lexicon_is_valid():
+    from eggcorn import lexicon
+    rows = lexicon.load("vi")
+    assert len(rows) > 50
+    assert lexicon.validate(rows) == []
+
+
+def test_lexicon_rejects_pii_and_duplicates():
+    from eggcorn import lexicon
+    base = {"kind": "loanword", "cause": "loanword", "region": "", "source": "community", "verified": "no",
+            "_file": "x.csv"}
+    rows = [{**base, "heard": "bót", "meant": "bot", "example": "gọi 0912 345 678", "_line": 2},
+            {**base, "heard": "Bót", "meant": "bot", "example": "", "_line": 3}]
+    errs = lexicon.validate(rows)
+    assert any("phone" in e for e in errs) and any("duplicate" in e for e in errs)

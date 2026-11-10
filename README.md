@@ -115,6 +115,31 @@ eggcorn learn export confusions.jsonl --min-count 2 --context-out context.txt --
 `reviewed.jsonl` holds `{"hyp": …, "ref": …}` pairs. Rules are kept only when applying them does
 not lower term recall or raise WER on a held-out bench (`--gate termtest.jsonl`).
 
+## Nghễnh Ngãng — an open lexicon of Vietnamese mishearings
+
+*Nghễnh ngãng* is Vietnamese for "hard of hearing". `data/vi/nghenh-ngang.csv` collects pairs of
+**what was heard → what was meant**: English loanwords spoken the Vietnamese way (*i meo → email*,
+*bót → bot*), ASR eggcorns (*thích hợp → tích hợp*, *bỏ giá → báo giá*), regional sound mergers
+(*s/x, tr/ch, l/n, r/d/gi, hỏi/ngã, -n/-ng, -c/-t*) and classic phrase errors (*vô hình chung → vô hình trung*).
+
+```bash
+eggcorn lexicon check            # validate (schema, duplicates, no personal data)
+eggcorn lexicon hints > hints.txt   # "heard -> meant" lines to give the LLM in `flag --context`
+```
+
+Entries are **hints, not replacement rules**: *tết → test* is right in a software meeting and wrong
+at New Year. Use them as LLM context, as candidates for `learn` (which gates every rule on the bench),
+or to build term test sets.
+
+**Contributions wanted — đóng góp nhé!** Anyone can add a pair through the
+[issue form](../../issues/new?template=nghenh-ngang.yml) — no coding needed — or a pull request.
+See [CONTRIBUTING.md](CONTRIBUTING.md) (tiếng Việt + English). The data is CC BY 4.0; other
+languages are welcome under `data/<lang>/`.
+
+Further reading (not copied; different licenses):
+[The Eggcorn Database](https://eggcorns.lascribe.net/) (English) ·
+[Từ dễ nhầm lẫn — Ngày ngày viết chữ](https://ngayngayvietchu.com/tu-de-nham-lan/) (Vietnamese).
+
 ## Privacy and safety
 
 - **Nothing leaves your machine unless you pass `--llm`.** With `--llm`, each segment's transcripts
@@ -134,7 +159,7 @@ tooling — no data, prompts or models from that work.
 
 ## License
 
-Apache-2.0
+Code: Apache-2.0. Data in `data/`: CC BY 4.0 (`data/LICENSE`).
 
 ## Roadmap
 

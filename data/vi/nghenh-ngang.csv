@@ -1,0 +1,123 @@
+heard,meant,kind,cause,region,example,source,verified
+vô hình chung,vô hình trung,phrase,sound-alike,,việc đó vô hình trung làm mọi người hiểu lầm,general,yes
+sáng lạn,xán lạn,phrase,s/x,,tương lai xán lạn,general,yes
+chín mùi,chín muồi,phrase,sound-alike,,thời cơ đã chín muồi,general,yes
+chuẩn đoán,chẩn đoán,phrase,sound-alike,,bác sĩ chẩn đoán bệnh,general,yes
+bàng quang,bàng quan,phrase,sound-alike,,thái độ bàng quan với mọi việc,general,yes
+đọc giả,độc giả,phrase,sound-alike,,cảm ơn quý độc giả,general,yes
+phong phanh,phong thanh,phrase,sound-alike,,em nghe phong thanh là sắp đổi lịch,general,yes
+yếu điểm,điểm yếu,meaning,meaning,,điểm yếu của sản phẩm là giá cao,general,yes
+sơ xuất,sơ suất,spelling,s/x,,do sơ suất nên gửi nhầm file,general,yes
+suất sắc,xuất sắc,spelling,s/x,,nhân viên xuất sắc của tháng,general,yes
+suất xứ,xuất xứ,spelling,s/x,,hàng có xuất xứ rõ ràng,general,yes
+sản suất,sản xuất,spelling,s/x,,kế hoạch sản xuất quý tới,general,yes
+cọ sát,cọ xát,spelling,s/x,,cọ xát với thực tế,general,yes
+sát xao,sát sao,spelling,s/x,,theo dõi sát sao tiến độ,general,yes
+xơ xài,sơ sài,spelling,s/x,,bản kế hoạch còn sơ sài,general,yes
+sơ xác,xơ xác,spelling,s/x,,cây cối xơ xác sau bão,general,yes
+xinh viên,sinh viên,spelling,s/x,bac,các bạn sinh viên thực tập,general,yes
+chau dồi,trau dồi,spelling,tr/ch,bac,trau dồi kỹ năng,general,yes
+trăm sóc,chăm sóc,spelling,tr/ch,bac,chăm sóc khách hàng,general,yes
+chuyện chò,chuyện trò,spelling,tr/ch,bac,ngồi chuyện trò cả buổi,general,yes
+trân thành,chân thành,spelling,tr/ch,bac,em chân thành cảm ơn anh,general,yes
+chở ngại,trở ngại,spelling,tr/ch,bac,không có trở ngại gì,general,yes
+chả lời,trả lời,spelling,tr/ch,bac,anh trả lời giúp em,general,yes
+nung linh,lung linh,spelling,l/n,bac,đèn lung linh,general,yes
+no nắng,lo lắng,spelling,l/n,bac,anh đừng lo lắng,general,yes
+nàm việc,làm việc,spelling,l/n,bac,giờ làm việc,general,yes
+lói chuyện,nói chuyện,spelling,l/n,bac,em nói chuyện với khách,general,yes
+lăng lực,năng lực,spelling,l/n,bac,năng lực đội ngũ,general,yes
+dành giật,giành giật,spelling,r/d/gi,,giành giật khách hàng,general,yes
+tranh dành,tranh giành,spelling,r/d/gi,,tranh giành thị phần,general,yes
+giành dụm,dành dụm,spelling,r/d/gi,,dành dụm tiền,general,yes
+dục giã,giục giã,spelling,r/d/gi,,khách giục giã giao hàng,general,yes
+dò rỉ,rò rỉ,spelling,r/d/gi,bac,rò rỉ dữ liệu,general,yes
+rở rang,dở dang,spelling,r/d/gi,,công việc còn dở dang,general,yes
+dản dị,giản dị,spelling,r/d/gi,,ăn mặc giản dị,general,yes
+dất dẻ,rất rẻ,spelling,r/d/gi,bac,giá rất rẻ,general,yes
+sữa chữa,sửa chữa,spelling,hỏi/ngã,,sửa chữa máy tính,general,yes
+chặt chẻ,chặt chẽ,spelling,hỏi/ngã,,quy trình chặt chẽ,general,yes
+sữa xe,sửa xe,spelling,hỏi/ngã,trung,tiệm sửa xe,general,yes
+nghĩ ngơi,nghỉ ngơi,spelling,hỏi/ngã,trung,anh nghỉ ngơi đi,general,yes
+lãng mạng,lãng mạn,spelling,n/ng,nam,bộ phim lãng mạn,general,yes
+trăng trở,trăn trở,spelling,n/ng,nam,anh ấy trăn trở mãi,general,yes
+chính chắn,chín chắn,spelling,n/ng,nam,suy nghĩ chín chắn,general,yes
+cái bàng,cái bàn,spelling,n/ng,nam,để trên cái bàn,general,yes
+bứt xúc,bức xúc,spelling,c/t,nam,khách rất bức xúc,general,yes
+chăm chúc,chăm chút,spelling,c/t,nam,chăm chút từng chi tiết,general,yes
+bắc đầu,bắt đầu,spelling,c/t,nam,mình bắt đầu họp nhé,general,yes
+dui vẻ,vui vẻ,spelling,v/d,nam,chúc anh vui vẻ,general,yes
+dề nhà,về nhà,spelling,v/d,nam,em về nhà rồi,general,yes
+khúc khủy,khúc khuỷu,spelling,sound-alike,,đường đèo khúc khuỷu,general,yes
+hấp lên,up lên,asr,loanword,,anh up lên drive giúp em,asr-meetings,yes
+ba bản e,ba bản ghi,asr,sound-alike,,hệ thống có ba bản ghi,asr-meetings,yes
+thích hợp,tích hợp,asr,sound-alike,,tích hợp với phần mềm kế toán,asr-meetings:5,no
+bỏ giá,báo giá,asr,sound-alike,,gửi báo giá cho khách,asr-meetings:4,no
+ngân hàng,đơn hàng,asr,sound-alike,,tạo đơn hàng mới,asr-meetings:4,no
+đảng mục,hạng mục,asr,sound-alike,,đi theo từng hạng mục,asr-meetings,no
+trách lại,check lại,asr,loanword,,em check lại giúp anh,asr-meetings:5,no
+chrome,prompt,asr,loanword,,sửa lại prompt cho bot,asr-meetings:11,no
+brazil,pricing,asr,loanword,,bảng pricing mới,asr-meetings:6,no
+israel,ISO,asr,loanword,,chứng chỉ ISO,asr-meetings,no
+tích cực,ticket,asr,loanword,,tạo ticket hỗ trợ,asr-meetings:4,no
+media,mini app,asr,loanword,,làm mini app trên điện thoại,asr-meetings:4,no
+giao lưu,Zalo,asr,loanword,,nhắn qua Zalo,asr-meetings:5,no
+giao lộ,Zalo,asr,loanword,,nhắn qua Zalo,asr-meetings:6,no
+bót,bot,loanword,loanword,,con bot trả lời tự động,asr-meetings:48,no
+chát bót,chatbot,loanword,loanword,,làm chatbot cho fanpage,asr-meetings:10,no
+chat box,chatbot,loanword,loanword,,làm chatbot cho fanpage,asr-meetings:11,no
+seo,sale,loanword,loanword,,bên sale gọi khách,asr-meetings:23,no
+sêu,sale,loanword,loanword,,bên sale gọi khách,asr-meetings:16,no
+linh,link,loanword,loanword,,gửi link cho khách,asr-meetings:22,no
+phom,form,loanword,loanword,,điền form đăng ký,asr-meetings:21,no
+đề mô,demo,loanword,loanword,,buổi demo sản phẩm,asr-meetings:20,no
+i meo,email,loanword,loanword,,gửi email xác nhận,asr-meetings:18,no
+pê ô,PO,loanword,loanword,,khách gửi PO rồi,asr-meetings:18,no
+tim,team,loanword,loanword,,cả team họp,asr-meetings:16,no
+lít đờ,leader,loanword,loanword,,leader duyệt,asr-meetings:15,no
+tác,tag,loanword,loanword,,gắn tag khách hàng,asr-meetings:13,no
+pho mét,format,loanword,loanword,,đúng format file,asr-meetings:13,no
+đa ta,data,loanword,loanword,,làm sạch data,asr-meetings:11,no
+rì viu,review,loanword,loanword,,review lại tài liệu,asr-meetings:10,no
+pho lâu,follow,loanword,loanword,,follow khách tiếp,asr-meetings:8,no
+đát bót,dashboard,loanword,loanword,,xem trên dashboard,asr-meetings:8,no
+phai,file,loanword,loanword,,gửi file cho anh,asr-meetings:8,no
+cờ lia,clear,loanword,loanword,,clear dữ liệu cũ,asr-meetings:8,no
+phích,fix,loanword,loanword,,fix lỗi này,asr-meetings:8,no
+tát,task,loanword,loanword,,giao task cho em,asr-meetings:8,no
+táp,tab,loanword,loanword,,mở tab mới,asr-meetings:7,no
+lít,list,loanword,loanword,,danh sách list khách,asr-meetings:7,no
+goét,web,loanword,loanword,,trang web công ty,asr-meetings:7,no
+guốc lóc,worklog,loanword,loanword,,ghi worklog hằng ngày,asr-meetings:7,no
+ích xeo,Excel,loanword,loanword,,xuất ra Excel,asr-meetings:7,no
+sớt,search,loanword,loanword,,search tên khách,asr-meetings:6,no
+mít tinh,meeting,loanword,loanword,,chiều nay có meeting,asr-meetings:6,no
+xe em,CRM,loanword,loanword,,cập nhật lên CRM,asr-meetings:6,no
+phiêu,field,loanword,loanword,,thêm field số điện thoại,asr-meetings:6,no
+phít bách,feedback,loanword,loanword,,khách gửi feedback,asr-meetings:5,no
+google sít,Google Sheet,loanword,loanword,,nhập vào Google Sheet,asr-meetings:5,no
+bờ rom,prompt,loanword,loanword,,viết prompt,asr-meetings:5,no
+isu,issue,loanword,loanword,,có issue mới,asr-meetings:5,no
+phan đinh,funding,loanword,loanword,,gọi funding,asr-meetings:5,no
+tham lai,timeline,loanword,loanword,,chốt timeline dự án,asr-meetings:5,no
+ây pi ai,API,loanword,loanword,,kết nối qua API,asr-meetings:5,no
+mi ni áp,mini app,loanword,loanword,,làm mini app,asr-meetings:5,no
+sếp ắp,setup,loanword,loanword,,setup tài khoản,asr-meetings:5,no
+con vớt,convert,loanword,loanword,,convert file sang pdf,asr-meetings:5,no
+óp sừng,option,loanword,loanword,,thêm option mới,asr-meetings:5,no
+rì mai,remind,loanword,loanword,,remind khách thanh toán,asr-meetings:5,no
+mô đun,module,loanword,loanword,,thêm module kho,asr-meetings:4,no
+tết,test,loanword,loanword,,test lại chức năng,asr-meetings:4,no
+áp,app,loanword,loanword,,cài app trên điện thoại,asr-meetings:4,no
+hai lai,highlight,loanword,loanword,,highlight dòng này,asr-meetings:4,no
+bi tu bi,B2B,loanword,loanword,,khách hàng B2B,asr-meetings:4,no
+ây ai,AI,loanword,loanword,,ứng dụng AI,asr-meetings:4,no
+mích,mic,loanword,loanword,,anh bật mic lên,asr-meetings:4,no
+tích kích,ticket,loanword,loanword,,tạo ticket,asr-meetings:4,no
+chếch lít,checklist,loanword,loanword,,làm theo checklist,asr-meetings:4,no
+rì quét,request,loanword,loanword,,gửi request,asr-meetings:3,no
+sơ vơ,server,loanword,loanword,,khởi động lại server,asr-meetings:3,no
+phây búc,Facebook,loanword,loanword,,quảng cáo Facebook,asr-meetings:3,no
+yêu dơ,user,loanword,loanword,,tạo user mới,asr-meetings:3,no
+ô tê,OT,loanword,loanword,,làm OT cuối tuần,asr-meetings:3,no
+ai đi,ID,loanword,loanword,,nhập ID khách,asr-meetings:4,no
