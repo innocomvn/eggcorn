@@ -101,6 +101,17 @@ eggcorn learn export confusions.jsonl --min-count 2 --context-out context.txt --
 `reviewed.jsonl` holds `{"hyp": …, "ref": …}` pairs. Rules are kept only when applying them does
 not lower term recall or raise WER on a held-out bench (`--gate termtest.jsonl`).
 
+## Privacy and safety
+
+- **Nothing leaves your machine unless you pass `--llm`.** With `--llm`, each segment's transcripts
+  (text only, never audio) are sent to the Anthropic API. Do not use it on data you are not allowed
+  to share with a third party; plug in a local model through `llm.py` instead.
+- The API key is read from `ANTHROPIC_API_KEY` and is never written to disk or logs.
+- Transcripts are untrusted input to the LLM. A segment that contains instructions can at worst
+  change its own flag: a suggested fix still needs an independent ASR system to agree before it
+  becomes a training label, and everything else goes to human review.
+- The core has no third-party dependencies and never executes or unpickles input files.
+
 ## Status
 
 Early. The workflow comes from adapting Vietnamese ASR to an internal domain (meetings and
