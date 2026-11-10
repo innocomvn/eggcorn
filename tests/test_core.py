@@ -104,3 +104,9 @@ def test_lexicon_rejects_pii_and_duplicates():
             {**base, "heard": "Bót", "meant": "bot", "example": "", "_line": 3}]
     errs = lexicon.validate(rows)
     assert any("phone" in e for e in errs) and any("duplicate" in e for e in errs)
+
+
+def test_english_lexicon_is_valid():
+    from eggcorn import lexicon
+    rows = lexicon.load("en")
+    assert len(rows) > 50 and lexicon.validate(rows) == []

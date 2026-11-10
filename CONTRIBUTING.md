@@ -48,6 +48,8 @@ Mã nguồn theo Apache-2.0.
 and what was meant. Vietnamese is first (`data/vi`, "Nghễnh Ngãng" — Vietnamese for *hard of hearing*);
 other languages are welcome in `data/<iso-code>/` with the same columns.
 
+- English entries go to `data/en/eggcorns.csv` (`region`: empty, `us`, `uk`, `au` or `in`). Write your own
+  example sentence; the classic eggcorns are common knowledge, but do not copy text from The Eggcorn Database.
 - Open an issue with the "Add a mishearing" form, or edit the CSV and send a PR after
   `eggcorn lexicon check` passes (CI runs it too).
 - No personal data, no confidential company terms, no copied text (write your own examples),

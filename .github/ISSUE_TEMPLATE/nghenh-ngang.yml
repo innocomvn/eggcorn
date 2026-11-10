@@ -8,6 +8,13 @@ body:
       value: |
         Cảm ơn bạn! Vui lòng **không** ghi tên người thật, số điện thoại, email, tên khách hàng hay dự án nội bộ.
         Câu ví dụ hãy tự viết, đừng chép từ trang khác.
+  - type: dropdown
+    id: lang
+    attributes:
+      label: "Ngôn ngữ / Language"
+      options: ["Tiếng Việt", "English"]
+    validations:
+      required: true
   - type: input
     id: heard
     attributes:
@@ -38,7 +45,7 @@ body:
     id: region
     attributes:
       label: "Vùng hay gặp (region)"
-      options: ["Không rõ / mọi nơi", "Bắc", "Trung", "Nam"]
+      options: ["Không rõ / mọi nơi / any", "Bắc", "Trung", "Nam", "US", "UK", "AU", "IN"]
   - type: input
     id: example
     attributes:

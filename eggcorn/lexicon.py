@@ -12,7 +12,7 @@ from .text import normalize
 
 FIELDS = ["heard", "meant", "kind", "cause", "region", "example", "source", "verified"]
 KINDS = {"loanword", "asr", "spelling", "phrase", "meaning"}
-REGIONS = {"", "bac", "trung", "nam"}
+REGIONS = {"vi": {"", "bac", "trung", "nam"}, "en": {"", "us", "uk", "au", "in"}}
 DATA = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
 
 # personal data must never enter a public lexicon
@@ -44,8 +44,9 @@ def validate(rows: list) -> list:
             errs.append(f"{at}: heard and meant are the same")
         if r["kind"] not in KINDS:
             errs.append(f"{at}: kind must be one of {sorted(KINDS)}")
-        if r["region"] not in REGIONS:
-            errs.append(f"{at}: region must be empty or one of bac/trung/nam")
+        allowed = REGIONS.get(r["_file"].split(os.sep)[0], {""} | {x for v in REGIONS.values() for x in v})
+        if r["region"] not in allowed:
+            errs.append(f"{at}: region must be empty or one of {sorted(allowed - {''})}")
         if r["verified"] not in ("yes", "no"):
             errs.append(f"{at}: verified must be yes or no")
         for k in ("heard", "meant", "example"):

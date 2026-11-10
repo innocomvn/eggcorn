@@ -11,5 +11,6 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -e . pytest
-      - run: eggcorn lexicon check
+      - run: eggcorn lexicon check --lang vi
+      - run: eggcorn lexicon check --lang en
       - run: pytest -q

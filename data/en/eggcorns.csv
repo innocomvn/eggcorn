@@ -1,0 +1,70 @@
+heard,meant,kind,cause,region,example,source,verified
+egg corn,acorn,phrase,sound-alike,,the squirrel buried an acorn,general,yes
+for all intensive purposes,for all intents and purposes,phrase,sound-alike,,for all intents and purposes the project is done,general,yes
+doggy dog world,dog-eat-dog world,phrase,sound-alike,,sales is a dog-eat-dog world,general,yes
+old timers disease,Alzheimer's disease,phrase,sound-alike,,research on Alzheimer's disease,general,yes
+case and point,case in point,phrase,sound-alike,,last quarter is a case in point,general,yes
+escape goat,scapegoat,phrase,sound-alike,,don't make the intern a scapegoat,general,yes
+mute point,moot point,phrase,sound-alike,,the budget question is now a moot point,general,yes
+nip it in the butt,nip it in the bud,phrase,sound-alike,,let's nip this bug in the bud,general,yes
+on tender hooks,on tenterhooks,phrase,sound-alike,,we were on tenterhooks waiting for the demo,general,yes
+deep seeded,deep-seated,phrase,sound-alike,,a deep-seated problem in the process,general,yes
+free reign,free rein,phrase,sound-alike,,the team has free rein on the design,general,yes
+tow the line,toe the line,phrase,sound-alike,,everyone has to toe the line on security,general,yes
+should of,should have,phrase,sound-alike,,we should have tested it first,general,yes
+could of,could have,phrase,sound-alike,,it could have been worse,general,yes
+statue of limitations,statute of limitations,phrase,sound-alike,,the statute of limitations has passed,general,yes
+biting my time,biding my time,phrase,sound-alike,,I'm biding my time until the release,general,yes
+baited breath,bated breath,phrase,sound-alike,,waiting with bated breath,general,yes
+peak my interest,pique my interest,phrase,sound-alike,,the proposal piqued my interest,general,yes
+sneak peak,sneak peek,phrase,sound-alike,,a sneak peek at the new version,general,yes
+wet your appetite,whet your appetite,phrase,sound-alike,,a short demo to whet your appetite,general,yes
+one in the same,one and the same,phrase,sound-alike,,the two reports are one and the same,general,yes
+make due,make do,phrase,sound-alike,,we'll make do with the old laptop,general,yes
+damp squid,damp squib,phrase,sound-alike,uk,the launch was a damp squib,general,yes
+pre madonna,prima donna,phrase,sound-alike,,don't be a prima donna about the schedule,general,yes
+heart rendering,heart-rending,phrase,sound-alike,,a heart-rending story,general,yes
+all of the sudden,all of a sudden,phrase,sound-alike,,all of a sudden the server went down,general,yes
+taken for granite,taken for granted,phrase,sound-alike,,good support is often taken for granted,general,yes
+ex patriot,expatriate,phrase,sound-alike,,an expatriate engineer in Hanoi,general,yes
+tongue and cheek,tongue in cheek,phrase,sound-alike,,the comment was tongue in cheek,general,yes
+first come first serve,first come first served,phrase,sound-alike,,seats are first come first served,general,yes
+old wise tale,old wives' tale,phrase,sound-alike,,that's just an old wives' tale,general,yes
+beckon call,beck and call,phrase,sound-alike,,the client expects us at their beck and call,general,yes
+pass mustard,pass muster,phrase,sound-alike,,the draft did not pass muster,general,yes
+slight of hand,sleight of hand,phrase,sound-alike,,the numbers looked like sleight of hand,general,yes
+upmost,utmost,phrase,sound-alike,,this is of the utmost importance,general,yes
+supposably,supposedly,phrase,sound-alike,,the fix was supposedly deployed,general,yes
+expresso,espresso,phrase,sound-alike,,a double espresso before the meeting,general,yes
+flush out the details,flesh out the details,meaning,meaning,,let's flesh out the details tomorrow,general,yes
+hone in on,home in on,meaning,meaning,,we need to home in on the root cause,general,no
+Jason,JSON,asr,loanword,,the API returns JSON,general,no
+sequel,SQL,asr,loanword,,write a SQL query,general,no
+my sequel,MySQL,asr,loanword,,migrate from MySQL,general,no
+post gress,Postgres,asr,loanword,,the data lives in Postgres,general,no
+cooper netties,Kubernetes,asr,loanword,,deploy it on Kubernetes,general,no
+engine x,nginx,asr,loanword,,put nginx in front of the app,general,no
+get hub,GitHub,asr,loanword,,push the branch to GitHub,general,no
+pie torch,PyTorch,asr,loanword,,train the model in PyTorch,general,no
+num pie,NumPy,asr,loanword,,convert it to a NumPy array,general,no
+reddish,Redis,asr,loanword,,cache sessions in Redis,general,no
+sass,SaaS,asr,sound-alike,,a SaaS subscription,general,no
+cash,cache,asr,sound-alike,,clear the browser cache,general,no
+sink,sync,asr,sound-alike,,sync the calendar,general,no
+a sink,async,asr,sound-alike,,make the call async,general,no
+dev ops,DevOps,asr,loanword,,the DevOps team owns the pipeline,general,no
+sales force,Salesforce,asr,loanword,,log the lead in Salesforce,general,no
+hub spot,HubSpot,asr,loanword,,the HubSpot form,general,no
+power be eye,Power BI,asr,loanword,,build a Power BI report,general,no
+chat g p t,ChatGPT,asr,loanword,,ask ChatGPT for a summary,general,no
+cloud,Claude,asr,sound-alike,,ask Claude to review the code,general,no
+lama,Llama,asr,sound-alike,,a Llama model running locally,general,no
+see eye see dee,CI/CD,asr,loanword,,the CI/CD pipeline failed,general,no
+you are el,URL,asr,loanword,,paste the URL here,general,no
+cue,queue,asr,sound-alike,,the job is in the queue,general,no
+write,right,asr,sound-alike,,turn right after the bridge,general,no
+there,their,asr,sound-alike,,their account was upgraded,general,no
+by,buy,asr,sound-alike,,the client wants to buy more seats,general,no
+weight,wait,asr,sound-alike,,please wait a moment,general,no
+four,for,asr,sound-alike,,thanks for joining,general,no
+eight,ate,asr,sound-alike,,we ate before the meeting,general,no

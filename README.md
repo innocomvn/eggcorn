@@ -117,7 +117,7 @@ not lower term recall or raise WER on a held-out bench (`--gate termtest.jsonl`)
 
 ## Nghễnh Ngãng — an open lexicon of Vietnamese mishearings
 
-*Nghễnh ngãng* is Vietnamese for "hard of hearing". `data/vi/nghenh-ngang.csv` collects pairs of
+*Nghễnh ngãng* is Vietnamese for "hard of hearing". `data/vi/nghenh-ngang.csv` (and `data/en/eggcorns.csv` for English) collect pairs of
 **what was heard → what was meant**: English loanwords spoken the Vietnamese way (*i meo → email*,
 *bót → bot*), ASR eggcorns (*thích hợp → tích hợp*, *bỏ giá → báo giá*), regional sound mergers
 (*s/x, tr/ch, l/n, r/d/gi, hỏi/ngã, -n/-ng, -c/-t*) and classic phrase errors (*vô hình chung → vô hình trung*).
@@ -130,6 +130,10 @@ eggcorn lexicon hints > hints.txt   # "heard -> meant" lines to give the LLM in 
 Entries are **hints, not replacement rules**: *tết → test* is right in a software meeting and wrong
 at New Year. Use them as LLM context, as candidates for `learn` (which gates every rule on the bench),
 or to build term test sets.
+
+An English lexicon lives in `data/en/eggcorns.csv`: classic eggcorns (*for all intensive purposes →
+for all intents and purposes*, *escape goat → scapegoat*) and tech-meeting ASR errors (*Jason → JSON*,
+*sequel → SQL*, *cooper netties → Kubernetes*, *cloud → Claude*). Use `--lang en` with `lexicon check / hints`.
 
 **Contributions wanted — đóng góp nhé!** Anyone can add a pair through the
 [issue form](../../issues/new?template=nghenh-ngang.yml) — no coding needed — or a pull request.
