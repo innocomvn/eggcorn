@@ -60,7 +60,7 @@ def cmd_bench_score(a):
     print(f"{'system':24s} {'term_recall':>11s} {'still_wrong':>11s} {'WER':>7s}")
     for p in a.hyps:
         s = bench.score(items, {r["id"]: r["hyp"] for r in read(p)})
-        print(f"{os.path.basename(p):24s} {s["term_recall"]:11.1%} {s['still_wrong']:11d} {s['wer']:7.1%}")
+        print(f"{os.path.basename(p):24s} {s['term_recall']:11.1%} {s['still_wrong']:11d} {s['wer']:7.1%}")
 
 
 def cmd_learn_pairs(a):
