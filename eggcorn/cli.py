@@ -2,6 +2,7 @@
 import argparse
 import json
 import os
+import re
 import sys
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict
@@ -27,6 +28,14 @@ def cmd_flag(a):
         from .llm import Anthropic, build_prompt
         reviewer = Anthropic(model=a.model)
 
+    # neighbours: the previous / next primary transcript of the same recording disambiguate short segments
+    near = {}
+    for i, s in enumerate(segs):
+        g = s.get("group")
+        prev = [x["hyps"][a.primary] for x in segs[max(0, i - a.neighbors):i] if x.get("group") == g] if g else []
+        nxt = [x["hyps"][a.primary] for x in segs[i + 1:i + 1 + a.neighbors] if x.get("group") == g] if g else []
+        near[s["id"]] = (prev, nxt)
+
     def one(s):
         hyps, conf = s["hyps"], s.get("conf")
         if flag.is_noise(hyps, a.primary, s.get("no_speech"), conf):
@@ -35,10 +44,11 @@ def cmd_flag(a):
         if reviewer:
             others = {k: v for k, v in hyps.items() if k != a.primary}
             try:
-                llm = reviewer.ask(build_prompt(hyps[a.primary], others, a.context))
+                ctx = " ".join(x for x in (a.context, s.get("context", "")) if x)
+                llm = reviewer.ask(build_prompt(hyps[a.primary], others, ctx, *near[s["id"]]))
             except Exception as e:  # noqa: BLE001 - one bad call must not stop a batch of thousands
                 print(f"{s['id']}: llm failed: {e}", file=sys.stderr)
-        r = flag.triage(hyps, a.primary, conf, llm)
+        r = flag.triage(hyps, a.primary, conf, llm, biased=set(s.get("biased") or a.biased), strict_bias=a.strict_bias)
         return {**s, "primary": a.primary, "class": r.cls, "label": r.label, "reasons": r.reasons,
                 "suggestion": r.suggestion}
 
@@ -57,10 +67,12 @@ def cmd_bench_build(a):
 
 def cmd_bench_score(a):
     items = read(a.termtest)
-    print(f"{'system':24s} {'term_recall':>11s} {'still_wrong':>11s} {'WER':>7s}")
+    gl = [t.strip() for t in re.split(r"[,\n]", open(a.glossary, encoding="utf-8").read()) if t.strip()] if a.glossary else None
+    print(f"{'system':24s} {'term_recall':>11s} {'still_wrong':>11s} {'false_terms':>11s} {'WER':>7s}")
     for p in a.hyps:
-        s = bench.score(items, {r["id"]: r["hyp"] for r in read(p)})
-        print(f"{os.path.basename(p):24s} {s['term_recall']:11.1%} {s['still_wrong']:11d} {s['wer']:7.1%}")
+        s = bench.score(items, {r["id"]: r["hyp"] for r in read(p)}, gl)
+        fa = "-" if s["false_terms"] is None else str(s["false_terms"])
+        print(f"{os.path.basename(p):24s} {s['term_recall']:11.1%} {s['still_wrong']:11d} {fa:>11s} {s['wer']:7.1%}")
 
 
 def cmd_learn_pairs(a):
@@ -97,12 +109,16 @@ def main(argv=None):
     f.add_argument("--llm", action="store_true", help="ask an LLM to flag suspect spans")
     f.add_argument("--model", default="claude-sonnet-5-5"); f.add_argument("--context", default="")
     f.add_argument("--workers", type=int, default=4)
+    f.add_argument("--neighbors", type=int, default=1, help="segments of the same `group` shown to the LLM on each side")
+    f.add_argument("--biased", nargs="*", default=[], help="systems that were given the glossary as context")
+    f.add_argument("--strict-bias", action="store_true", help="a fix confirmed only by a biased system goes to review")
     f.set_defaults(fn=cmd_flag)
 
     b = sub.add_parser("bench", help="term test set").add_subparsers(required=True)
     bb = b.add_parser("build"); bb.add_argument("input"); bb.add_argument("-o", "--output", required=True)
     bb.set_defaults(fn=cmd_bench_build)
     bs = b.add_parser("score"); bs.add_argument("termtest"); bs.add_argument("hyps", nargs="+", help='JSONL {"id","hyp"}')
+    bs.add_argument("--glossary", help="terms (comma/newline separated) given as context: counts terms heard but not said")
     bs.set_defaults(fn=cmd_bench_score)
 
     l = sub.add_parser("learn", help="confusion memory").add_subparsers(required=True)

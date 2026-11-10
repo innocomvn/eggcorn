@@ -23,15 +23,21 @@ fillers, repetitions and informal speech are correct and must stay.
 Your only job is to point at a span that was probably MISHEARD (a word that sounds like what was
 said but makes no sense here, e.g. a domain term or loanword turned into a common word).
 
-{context}Primary transcript: {primary}
+{context}{before}Primary transcript: {primary}
+{after}
 {others}
 If nothing looks misheard, answer suspect=false. Otherwise give `wrong` as an exact substring of the
 primary transcript and `fix` as the replacement. Answer by calling the tool `report`."""
 
 
-def build_prompt(primary: str, others: dict, context: str = "") -> str:
+def build_prompt(primary: str, others: dict, context: str = "", before=(), after=()) -> str:
+    """`context`: glossary / topic. `before`, `after`: neighbouring transcripts, shown read-only - only
+    the primary transcript may be flagged. A glossary is a hint, not evidence: a term must still fit the sound."""
     o = "".join(f"Other system ({k}): {v}\n" for k, v in others.items())
-    return PROMPT.format(context=f"Context: {context}\n" if context else "", primary=primary, others=o)
+    b = "".join(f"(previous) {t}\n" for t in before)
+    n = "".join(f"(next) {t}\n" for t in after)
+    ctx = f"Context (hint only; do not force these terms in unless the transcript sounds like them): {context}\n" if context else ""
+    return PROMPT.format(context=ctx, primary=primary, others=o, before=b, after=n)
 
 
 class Anthropic:

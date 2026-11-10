@@ -26,7 +26,9 @@ class Result:
     suggestion: dict = None          # {"wrong", "fix", "why"} for reviewers
 
 
-def triage(hyps: dict, primary: str, conf: dict = None, llm: dict = None) -> Result:
+def triage(hyps: dict, primary: str, conf: dict = None, llm: dict = None, biased=(), strict_bias=False) -> Result:
+    """`biased`: systems that were given the same glossary the LLM saw. Their agreement with an LLM fix is
+    correlated, not independent; it is marked, and with strict_bias it is not enough on its own."""
     p = hyps[primary]
     others = {k: v for k, v in hyps.items() if k != primary}
     reasons = []
@@ -47,9 +49,11 @@ def triage(hyps: dict, primary: str, conf: dict = None, llm: dict = None) -> Res
         return Result("sure", p)
     if sug:
         fixed = p.replace(sug["wrong"], sug["fix"], 1)
-        for name, o in others.items():
-            if contains(o, sug["fix"]) and distance(fixed, o) <= CONFIRM:
-                return Result("sure", fixed, reasons + [f"confirmed_by_{name}"], sug)
+        confirm = [n for n, o in others.items() if contains(o, sug["fix"]) and distance(fixed, o) <= CONFIRM]
+        free = [n for n in confirm if n not in biased]
+        if free or (confirm and not strict_bias):
+            tag = [f"confirmed_by_{n}" for n in free] + [f"confirmed_by_{n}_biased" for n in confirm if n in biased]
+            return Result("sure", fixed, reasons + tag, sug)
     elif all(distance(p, o) <= AGREE for o in others.values()):
         return Result("sure", p, reasons + ["systems_agree"])
     return Result("check", None, reasons, sug)

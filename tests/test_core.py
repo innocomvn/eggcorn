@@ -66,3 +66,24 @@ def test_mine_pairs_and_gate():
 
 def test_distance_empty():
     assert distance("", "") == 0.0
+
+
+def test_biased_confirmation_is_marked_and_strict_sends_to_review():
+    hyps = {"whisper": "đồng bộ cip nhé anh", "qwen": "đồng bộ crm nhé anh"}
+    llm = {"suspect": True, "kind": "term", "wrong": "cip", "fix": "crm", "confidence": 0.9}
+    r = flag.triage(hyps, "whisper", llm=llm, biased={"qwen"})
+    assert r.cls == "sure" and "confirmed_by_qwen_biased" in r.reasons
+    r = flag.triage(hyps, "whisper", llm=llm, biased={"qwen"}, strict_bias=True)
+    assert r.cls == "check"
+
+
+def test_false_terms_counts_over_biasing():
+    items = [{"id": "1", "term": "crm", "misheard": "cip", "ref": "đồng bộ crm rồi"}]
+    s = bench.score(items, {"1": "đồng bộ crm erp rồi"}, glossary=["crm", "erp"])
+    assert s["false_terms"] == 1 and s["term_recall"] == 1.0
+
+
+def test_prompt_shows_neighbours_read_only():
+    from eggcorn.llm import build_prompt
+    p = build_prompt("đồng bộ cip", {"qwen": "đồng bộ crm"}, "CRM, ERP", ["anh mở phần mềm"], ["xong rồi"])
+    assert "(previous) anh mở phần mềm" in p and "(next) xong rồi" in p and "hint only" in p

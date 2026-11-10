@@ -78,6 +78,20 @@ eggcorn flag segments.jsonl -o flagged.jsonl --primary whisper [--llm --context 
 Each segment gets `class` = `sure` | `check` | `drop`, the reasons, and — when the LLM and another
 system agree — a suggested `label`. Use `sure` for training, send `check` to your review tool.
 
+#### Context helps — and has a trap
+
+Optional per-segment fields: `group` (recording id: the LLM then sees the previous / next sentence,
+`--neighbors 1`), `context` (glossary or topic for that recording, e.g. the customer's product names).
+Short segments are often ambiguous on their own; one sentence on each side and a glossary make the
+LLM's flags much sharper.
+
+The trap: if the second ASR system was **given the same glossary** (Whisper `initial_prompt`,
+Qwen3-ASR `context`, hotwords), its agreement with the LLM is no longer independent — both lean towards
+the glossary. Declare such systems with `--biased qwen` (or `"biased": [...]` per segment):
+their confirmations are tagged `confirmed_by_qwen_biased`, and `--strict-bias` sends them to review
+instead of straight into training. `bench score --glossary` counts `false_terms` (glossary words
+heard but not said) so you can see what biasing costs.
+
 ### 2. bench — term recall
 
 ```bash
@@ -86,9 +100,9 @@ eggcorn bench score termtest.jsonl hyps_modelA.jsonl hyps_modelB.jsonl
 ```
 
 ```
-system    term_recall  still_wrong  WER(vs label)
-modelA        24.0%        113          16.2
-modelB        60.0%         14          22.8
+system    term_recall  still_wrong  false_terms  WER(vs label)
+modelA        24.0%        113            -          16.2
+modelB        60.0%         14            -          22.8
 ```
 
 ### 3. learn — confusion memory

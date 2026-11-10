@@ -18,9 +18,10 @@ def build(flagged: list) -> list:
     return out
 
 
-def score(items: list, hyps: dict) -> dict:
-    """hyps: id -> text for one system."""
-    hit = wrong = errs = n = scored = 0
+def score(items: list, hyps: dict, glossary: list = None) -> dict:
+    """hyps: id -> text for one system. With `glossary` (the terms given as context), also count
+    false_terms: glossary terms in the output that are not in the reference - the cost of over-biasing."""
+    hit = wrong = errs = n = scored = false = 0
     for it in items:
         h = hyps.get(it["id"])
         if h is None:
@@ -28,6 +29,9 @@ def score(items: list, hyps: dict) -> dict:
         scored += 1
         hit += contains(h, it["term"])
         wrong += contains(h, it["misheard"]) and not contains(it["term"], it["misheard"])
+        if glossary:
+            false += sum(contains(h, t) and not contains(it["ref"], t) for t in glossary)
         e, k = wer_counts(it["ref"], h)
         errs += e; n += k
-    return {"items": scored, "term_recall": hit / max(scored, 1), "still_wrong": wrong, "wer": errs / max(n, 1)}
+    return {"items": scored, "term_recall": hit / max(scored, 1), "still_wrong": wrong,
+            "false_terms": false if glossary else None, "wer": errs / max(n, 1)}
