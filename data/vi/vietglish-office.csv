@@ -1,0 +1,78 @@
+heard,meant,kind,cause,region,example,source,verified
+áp đết,update,loanword,loanword,,em vừa update tính năng mới lên app,community,no
+đao loát,download,loanword,loanword,,anh download tài liệu đính kèm về xem,community,no
+côm măng,comment,loanword,loanword,,khách hàng comment phàn nàn trên page,community,no
+bấc,bug,loanword,loanword,,con bug này làm sập cả hệ thống,community,no
+cốt,code,loanword,loanword,,đoạn code này cần tối ưu lại,community,no
+đép,dev,loanword,loanword,,bên dev đang kiểm tra lại source,community,no
+côn,call,loanword,loanword,,mình vừa call trao đổi trực tiếp với khách,community,no
+mít,meet,loanword,loanword,,chúng ta lập phòng Google Meet họp gấp,community,no
+rì poóc,report,loanword,loanword,,gửi anh bản report doanh thu tuần,community,no
+sập mít,submit,loanword,loanword,,nhớ submit form trước năm giờ chiều,community,no
+ót lai,offline,loanword,loanword,,cuộc họp này mình tổ chức offline,community,no
+ôn lai,online,loanword,loanword,,khách muốn trao đổi online qua zoom,community,no
+xì tai,style,loanword,loanword,,thiết kế banner theo style tối giản,community,no
+sờ ta tút,status,loanword,loanword,,cập nhật status công việc trên bảng,community,no
+sờ pan,spam,loanword,loanword,,tin nhắn gửi hàng loạt bị dính spam,community,no
+cóp pi,copy,loanword,loanword,,em copy đường link gửi qua nhóm nhé,community,no
+pết,paste,loanword,loanword,,paste nội dung này vào ô ghi chú,community,no
+xếp,save,loanword,loanword,,nhớ ấn save lại kẻo mất file,community,no
+con nếch,connect,loanword,loanword,,hệ thống không connect được vào database,community,no
+riu tam,real-time,loanword,loanword,,dữ liệu cần được hiển thị real-time,community,no
+rét bót,response,loanword,loanword,,tốc độ response của server quá chậm,community,no
+bách láp,backlog,loanword,loanword,,đưa yêu cầu này vào backlog sprint sau,community,no
+xì pin,sprint,loanword,loanword,,sprint này kéo dài trong hai tuần,community,no
+rì trô,retro,loanword,loanword,,cuối buổi chiều team sẽ họp retro,community,no
+đê ly,daily,loanword,loanword,,mỗi sáng chín giờ team họp daily,community,no
+xờ cua mát tơ,scrum master,loanword,loanword,,scrum master sẽ điều phối buổi làm việc,community,no
+ót sít,off-site,loanword,loanword,,công ty tổ chức đi off-site cuối tuần,community,no
+on bót đinh,onboarding,loanword,loanword,,quy trình onboarding cho nhân sự mới,community,no
+mai tơn,milestone,loanword,loanword,,dự án đã đạt được milestone đầu tiên,community,no
+bách cắp,backup,loanword,loanword,,phải backup dữ liệu trước khi chạy lệnh,community,no
+mai cơ rô xốp,Microsoft,loanword,loanword,,mua bản quyền bộ phần mềm Microsoft,community,no
+chê ra,Jira,loanword,loanword,,tạo task theo dõi tiến độ trên Jira,community,no
+xì lác,Slack,loanword,loanword,,nhắn tin thông báo vào kênh Slack chung,community,no
+gít húp,GitHub,loanword,loanword,,đẩy code lên GitHub để review,community,no
+tơ rê lô,Trello,loanword,loanword,,kéo thẻ công việc trên bảng Trello,community,no
+nô sần,Notion,loanword,loanword,,lưu trữ tài liệu quy trình trên Notion,community,no
+phích ma,Figma,loanword,loanword,,designer vừa hoàn thiện giao diện trên Figma,community,no
+bốt man,Postman,loanword,loanword,,test các cổng kết nối bằng Postman,community,no
+lai vơ chim,livestream,loanword,loanword,,buổi tối có phiên livestream bán hàng,community,no
+tóp tóp,TikTok,loanword,loanword,,kênh TikTok của thương hiệu đạt triệu view,community,no
+xốp pi,Shopee,loanword,loanword,,gian hàng chính hãng trên sàn Shopee,community,no
+đít cót,Discord,loanword,loanword,,trao đổi kỹ thuật trong nhóm Discord,community,no
+tê lê ram,Telegram,loanword,loanword,,gửi cảnh báo máy chủ qua Telegram bot,community,no
+an mút,unmute,loanword,loanword,,anh hãy unmute mic để phát biểu,community,no
+mút mít,mute mic,loanword,loanword,,mọi người vui lòng mute mic khi người khác nói,community,no
+sen lờ,seller,loanword,loanword,,chính sách hoa hồng mới dành cho seller,community,no
+bai ơ,buyer,loanword,loanword,,tìm kiếm khách hàng buyer tiềm năng,community,no
+pây mơn,payment,loanword,loanword,,kết nối cổng payment để khách thanh toán,community,no
+chéc ao,checkout,loanword,loanword,,tối ưu các bước tại trang checkout,community,no
+ai lốp du,I love you,loanword,loanword,,anh nói I love you bằng tiếng Anh,community,no
+hép bi bớt đây,Happy birthday,loanword,loanword,,cả phòng hát Happy birthday,community,no
+quai phai,Wifi,loanword,loanword,,mật khẩu wifi là gì,community,no
+gúc gồ,Google,loanword,loanword,,tra Google thử xem,community,no
+du túp,YouTube,loanword,loanword,,video trên YouTube,community,no
+sờ can đan,Scandal,loanword,loanword,,vụ scandal trên mạng,community,no
+còm men,Comment,loanword,loanword,,đọc comment của khách,community,no
+át min,Admin,loanword,loanword,,nhắn admin của nhóm,community,no
+lai chim,Livestream,loanword,loanword,,tối nay có livestream,community,no
+bốt,post,loanword,loanword,,em post bài lên fanpage rồi,community,no
+côm mít ạ,commit,loanword,loanword,,em commit xong rồi nhé,community,no
+pun,pull,loanword,loanword,,sắp tới sẽ pull toàn bộ,community,no
+cơ lia,clear,loanword,loanword,,mọi người clear lẹ lên,community,no
+ta gét,target,loanword,loanword,,team mình check lại target này,community,no
+rì luy,release,loanword,loanword,,mọi người release lẹ lên,community,no
+xờ pon sơ,sponsor,loanword,loanword,,cần tối ưu lại sponsor,community,no
+rê li,release,loanword,loanword,,chiều nay mình release nhé,community,no
+sít đinh,seeding,loanword,loanword,,cần tối ưu lại seeding,community,no
+sờ vơ,server,loanword,loanword,,anh gửi em server nhé,community,no
+rân,run,loanword,loanword,,anh run lại giúp em,community,no
+cam pen,campaign,loanword,loanword,,anh gửi em campaign nhé,community,no
+in xờ tôn,install,loanword,loanword,,tiến hành install ngay bây giờ,community,no
+pờ rô pô dồ,proposal,loanword,loanword,,tạo thêm proposal cho dự án,community,no
+xờ cờ rum,scrum,loanword,loanword,,cần tối ưu lại scrum,community,no
+cờ lia lẹ,clear,loanword,loanword,,khách yêu cầu clear gấp,community,no
+pho quật,forward,loanword,loanword,,anh forward email này cho em nhé,community,no
+ác cao,account,loanword,loanword,,họp bàn về account vào chiều nay,community,no
+sét ấp,setup,loanword,loanword,,sếp giục setup nãy giờ,community,no
